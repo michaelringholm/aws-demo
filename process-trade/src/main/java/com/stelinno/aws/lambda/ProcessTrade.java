@@ -107,8 +107,10 @@ public class ProcessTrade implements RequestHandler<SNSEvent, String> {
 		
 		Iterator<SNSRecord> recordsIter = event.getRecords().iterator();
 		while(recordsIter.hasNext()) {
+			logger.info("found an SNS record....");
 			SNSRecord snsRecord = recordsIter.next();
 			Trade trade = gson.fromJson(snsRecord.getSNS().getMessage(), Trade.class);
+			logger.info("found a trade object in the SNS record....");
 			/*AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
 			DynamoDB dynamoDB = new DynamoDB(client);
 	
@@ -152,7 +154,6 @@ public class ProcessTrade implements RequestHandler<SNSEvent, String> {
 			}
 		}
 		
-		return String.format("Processed POJO trade with id %d and amount %s via handleRequest method V2", 
-				trade.getTradeId(), String.valueOf(trade.getTradeAmount()));
+		return "ProcessTrade function done!";
 	}
 }
