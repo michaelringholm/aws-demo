@@ -30,6 +30,11 @@ public class ProgramGuideController {
   public String stocks() {
     return "{ Avatar 20:00 TV2 }";
   }
+  
+  @RequestMapping("/version")
+  public String version() {
+    return "V1.0.1";
+  }  
 
   /**
    * <a href="https://cloud.google.com/appengine/docs/flexible/java/how-instances-are-managed#health_checking">

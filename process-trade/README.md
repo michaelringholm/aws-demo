@@ -14,6 +14,37 @@ https://www.youtube.com/watch?v=G_-aEXmluq8
 2) Increase timeout to 60 seconds
 3) Increase heap size to 512MB
 
+# Using SNS with Lambda
+https://aws.amazon.com/blogs/mobile/invoking-aws-lambda-functions-via-amazon-sns/
+https://stackoverflow.com/questions/32764138/aws-sns-publishing-to-a-subscribed-lambda-function-logs-null-fields
+
+# Using SQS with Lambda
+https://cloudonaut.io/integrate-sqs-and-lambda-serverless-architecture-for-asynchronous-workloads/
+
+# Maven sources
+mvn dependency:sources
+
+# JSON Viewer
+http://jsonviewer.stack.hu/
+
+# Policy
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:DeleteItem",
+                "dynamodb:GetItem",
+                "dynamodb:PutItem",
+                "dynamodb:Scan",
+                "dynamodb:UpdateItem"
+            ],
+            "Resource": "arn:aws:dynamodb:eu-central-1:877257283291:table/Category"
+        }
+    ]
+}
+
 # Test data
 {"tradeId":"90654","tradeAmount":"20000000", "tradeBook":"FX Spot", "trader":"Michael Sundgaard"}
 
@@ -21,14 +52,6 @@ https://www.youtube.com/watch?v=G_-aEXmluq8
 "default": "{\"tradeId\":\"88654\",\"tradeAmount\":\"20000000\", \"tradeBook\":\"FX Spot\", \"trader\":\"Michael Sundgaard\"}", 
 "lambda": "{\"tradeId\":\"88654\",\"tradeAmount\":\"20000000\", \"tradeBook\":\"FX Spot\", \"trader\":\"Michael Sundgaard\"}"
 }
-
-# Using SNS with Lambda
-https://aws.amazon.com/blogs/mobile/invoking-aws-lambda-functions-via-amazon-sns/
-https://stackoverflow.com/questions/32764138/aws-sns-publishing-to-a-subscribed-lambda-function-logs-null-fields
-
-# Maven sources
-mvn dependency:sources
-
 
 # Large test data (SNS)
 {

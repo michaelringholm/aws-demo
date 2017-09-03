@@ -5,14 +5,38 @@
 	<title>Stelinno Program Guide Demo on Azure</title>
 	
 	<link rel="stylesheet" href="/css/stelinno.css" />
+	<link rel="stylesheet" href="/css/program-guide.css" />
 </head>
 <body>
-	<h1>Stelinno Program Guide Demo on AWS.</h1>
-	<br>
-	Note: When running locally with Tomcat this page will be accessible via http://localhost:8080/program-guide.<br>
-	When running locally via Jetty this page will be accessible via http://localhost:8080/.<br>
-	Controllers has been setup to listen for request with the .ctl extension.
-	<hr>
-	@Copyright Stelinno 2017	
+	<div id="header" style="border: solid 0px red;">
+		<img src="/images/stelinno-robo-logo.png" alt="Stelinno Robo Orange" class="stelinno-logo" style="position: absolute; top: 0px; text-align: center;">
+		<div style="position: absolute; top: 18px; left: 70px; text-align: left; font-family: alien-resurrection; font-size: 34pt;">Stelinno</div>
+		<div style="position: absolute; top: 68px; left: 70px; text-align: left; font-family: alien-resurrection; font-size: 14pt; color: #95b3d7;">Stellar Innovations</div>
+		<div style="position: absolute; top: 40px; right: 60px; text-align: center; background-color: rgba(31,73,125,0.75); width: 648px; height: 40px; border-radius: 6px; line-height: 40px;">
+			<img src="/images/home-white.jpg" alt="Stelinno - Home" style="width: 28px; position: absolute;left: 34px; top: 7px;">
+			<a href="/index.html" class="menuItem menuItemSelected">home</a>&nbsp;&nbsp;|
+			<a href="/about.html" class="menuItem">about</a>&nbsp;&nbsp;|
+			<a href="/service-details.html" class="menuItem">add</a>&nbsp;&nbsp;|
+			<a href="/search.html" class="menuItem">search</a>&nbsp;&nbsp;|
+		</div>
+	</div>
+	<div id="content">
+		<h1>Stelinno Program Guide Demo on AWS.</h1>
+		<br>
+		Note: When running locally with Tomcat this page will be accessible via http://localhost:8080/program-guide.<br>
+		When running locally via Jetty this page will be accessible via http://localhost:8080/.<br>
+		Controllers has been setup to listen for request with the .ctl extension.
+		
+		<div><a href="home.ctl">home</a></div>
+		<div><a href="program.ctl">program</a></div>
+		<div><a href="version.ctl">version</a></div>
+		<div><a href="_ah/health.ctl">health</a></div>
+	</div>
+		<div id="footer">
+		<hr>
+		<a href="mailto:info@stelinno.com">info@stelinno.com</a>
+		@Copyright Stelinno 2017
+	</div>
+		
 </body>
 </html>

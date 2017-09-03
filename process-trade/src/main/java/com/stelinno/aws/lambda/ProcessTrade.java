@@ -1,6 +1,5 @@
 package com.stelinno.aws.lambda;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,13 +9,10 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.Table;
-import com.amazonaws.services.dynamodbv2.model.TableDescription;
 import com.amazonaws.services.lambda.runtime.Context; 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.SNSEvent;
 import com.amazonaws.services.lambda.runtime.events.SNSEvent.SNSRecord;
-import com.amazonaws.services.s3.event.S3EventNotification;
-import com.amazonaws.services.sns.model.SubscribeResult;
 import com.google.gson.Gson;
 
 //public class ProcessTrade implements RequestHandler<Integer, String> {
@@ -102,12 +98,17 @@ public class ProcessTrade implements RequestHandler<SNSEvent, String> {
 		return "fully done!";
 	}*/
 	
+	/**
+	 * http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBMapper.html
+	 * http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBMapper.Methods.html
+	 */
+	
 	public String handleRequest(SNSEvent event, Context context) {
 		logger.info("handle request is starting....");
 		
 		Iterator<SNSRecord> recordsIter = event.getRecords().iterator();
 		while(recordsIter.hasNext()) {
-			logger.info("found an SNS record....");
+			logger.info("found a SNS record....");
 			SNSRecord snsRecord = recordsIter.next();
 			Trade trade = gson.fromJson(snsRecord.getSNS().getMessage(), Trade.class);
 			logger.info("found a trade object in the SNS record....");
